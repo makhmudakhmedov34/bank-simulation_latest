@@ -1,6 +1,6 @@
 package com.cydeo.banksimulation.service;
 
-import com.cydeo.banksimulation.entity.Account;
+import com.cydeo.banksimulation.model.Account;
 import com.cydeo.banksimulation.enums.AccountType;
 
 import java.math.BigDecimal;
