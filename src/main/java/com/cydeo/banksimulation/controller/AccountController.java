@@ -22,4 +22,10 @@ public class AccountController {
         model.addAttribute("accountList", accountService.listAllAccount());
         return "account/index";
     }
+
+    @GetMapping("/create-form")
+    public String getCreateForm(Model model){
+        model.addAttribute("account",new Account())
+    }
+
 }
