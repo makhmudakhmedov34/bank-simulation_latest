@@ -24,7 +24,14 @@ public class AccountRepository {
     }
 
     public Account findById(UUID accountId) {
-       return accountList.stream().filter(account -> account.getId().equals(accountId)).findAny().orElseThrow(() ->
-                new RecordNotFoundException("This account is not in the databse"));
+        return accountList.stream().filter(account -> account.getId().equals(accountId)).findAny().orElseThrow(() ->
+                new RecordNotFoundException("This account is not in the database"));
+    }
+
+    public Account deleteAccount(Account account) {
+        accountList.remove(findById(account.getId()));
+        accountList.add(account);
+        return account;
+
     }
 }
