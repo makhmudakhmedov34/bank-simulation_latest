@@ -1,4 +1,4 @@
-package com.cydeo.banksimulation.model;
+package com.cydeo.banksimulation.entity;
 
 
 import com.cydeo.banksimulation.enums.AccountStatus;
@@ -12,22 +12,25 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
 
-@Data
-@Builder
+
 public class Account {
 
 
 
-    private UUID id;
+    private Long id;
 
-    @NotNull
-    @Positive
-    private BigDecimal balance;
-    private AccountStatus accountStatus;
-    @NotNull
     private AccountType accountType;
+
+    private AccountStatus accountStatus;
+
     private Date creationDate;
-    @NotNull
     private Long userId;
+    private BigDecimal balance;
+
+
+
+
+
+
 
 }

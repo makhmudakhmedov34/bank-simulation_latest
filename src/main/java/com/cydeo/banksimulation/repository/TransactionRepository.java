@@ -1,6 +1,6 @@
 package com.cydeo.banksimulation.repository;
 
-import com.cydeo.banksimulation.model.Transaction;
+import com.cydeo.banksimulation.dto.TransactionDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -12,24 +12,24 @@ import java.util.stream.Collectors;
 @Component
 public class TransactionRepository {
 
-    public List<Transaction> transactionList = new ArrayList<>();
-
-    public Transaction save(Transaction transaction){
-        transactionList.add(transaction);
-        return transaction;
-    }
-
-    public List<Transaction> findAll() {
-        return  transactionList;
-    }
-
-    public List<Transaction> retrieveLastTransactions() {
-        return transactionList.stream().
-                sorted(Comparator.comparing(Transaction::getCreationDate)).limit(10).collect(Collectors.toList());
-    }
-
-    public List<Transaction> findTransactionListById(UUID id) {
-        return transactionList.stream().filter(transaction -> transaction.getSender().equals(id) || transaction.getReceiver().equals(id))
-                .collect(Collectors.toList());
-    }
+//    public List<TransactionDTO> transactionDTOList = new ArrayList<>();
+//
+//    public TransactionDTO save(TransactionDTO transactionDTO){
+//        transactionDTOList.add(transactionDTO);
+//        return transactionDTO;
+//    }
+//
+//    public List<TransactionDTO> findAll() {
+//        return transactionDTOList;
+//    }
+//
+//    public List<TransactionDTO> retrieveLastTransactions() {
+//        return transactionDTOList.stream().
+//                sorted(Comparator.comparing(TransactionDTO::getCreationDate)).limit(10).collect(Collectors.toList());
+//    }
+//
+//    public List<TransactionDTO> findTransactionListById(UUID id) {
+//        return transactionDTOList.stream().filter(transactionDTO -> transactionDTO.getSender().equals(id) || transactionDTO.getReceiver().equals(id))
+//                .collect(Collectors.toList());
+//    }
 }
