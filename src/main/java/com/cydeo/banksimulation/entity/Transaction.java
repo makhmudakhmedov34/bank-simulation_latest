@@ -13,9 +13,9 @@ public class Transaction {
 
     private Long id;
 
-    private UUID sender;
+    private Account sender;
 
-    private UUID receiver;
+    private Account receiver;
     private BigDecimal amount;
     private String message;
 
