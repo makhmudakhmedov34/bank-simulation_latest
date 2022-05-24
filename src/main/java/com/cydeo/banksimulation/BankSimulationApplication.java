@@ -1,9 +1,11 @@
 package com.cydeo.banksimulation;
 
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
@@ -11,6 +13,8 @@ public class BankSimulationApplication {
 
     public static void main(String[] args) {
        ApplicationContext applicationContext = SpringApplication.run(BankSimulationApplication.class, args);
+
+
 //        AccountService accountService = applicationContext.getBean(AccountServiceImpl.class);
 //        TransactionService transactionService = applicationContext.getBean(TransactionServiceImpl.class);
 //
@@ -29,5 +33,10 @@ public class BankSimulationApplication {
 //        System.out.println(transactionService.findAll().get(1));
 //        accountService.listAllAccount().forEach(System.out::println);
    }
+
+    @Bean
+    public ModelMapper modelMapper(){
+        return new ModelMapper();
+    }
 
 }
